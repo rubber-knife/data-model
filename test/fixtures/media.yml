@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  submission: one
+  title: MyString
+  type: 1
+  text: MyText
+  medium: MyString
+  materials_used: MyString
+
+two:
+  submission: two
+  title: MyString
+  type: 1
+  text: MyText
+  medium: MyString
+  materials_used: MyString

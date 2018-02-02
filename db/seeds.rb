@@ -1,18 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 ########## BEGIN ##########
 ########## SEED ##########
 
 puts "== Begin seeding ==\n\n"
 
-########## SEED ##########
-########## USERS ##########
+###
 
 puts "=== Begin seeding users ==="
 
@@ -24,13 +15,9 @@ puts "-- User created with id: #{@editor.id}"
 
 puts "=== End seeding users ==="
 
-########## END ##########
-########## USERS ##########
 
 puts "\n"
 
-########## SEED ##########
-########## SUBMISSIONS ##########
 
 puts "=== Begin seeding submissions ==="
 
@@ -39,13 +26,9 @@ puts "-- Submission created with id: #{@ij.id}"
 
 puts "=== End seeding submissions ==="
 
-########## END ##########
-########## SUBMISSIONS ##########
 
 puts "\n"
 
-########## SEED ##########
-########## META ##########
 
 puts "=== Begin seeding meta ==="
 
@@ -54,10 +37,18 @@ puts "-- Meta created with id: #{@meta.id}"
 
 puts "=== End seeding meta ==="
 
-########## END ##########
-########## META ##########
+
+puts "\n"
 
 
+puts "=== Begin seeding media ==="
+
+@media = @ij.media.create(kind: 'prose', text: 'It’s of some interest that the lively arts of the millenial U.S.A. treat anhedonia and internal emptiness as hip and cool. It’s maybe the vestiges of the Romantic glorification of Weltschmerz, which means world-weariness or hip ennui. Maybe it’s the fact that most of the arts here are produced by world-weary and sophisticated older people and then consumed by younger people who not only consume art but study it for clues on how to be cool, hip - and keep in mind that, for kids and younger people, to be hip and cool is the same as to be admired and accepted and included and so Unalone. Forget so-called peer-pressure. It’s more like peer-hunger. No? We enter a spiritual puberty where we snap to the fact that the great transcendent horror is loneliness, excluded encagement in the self. Once we’ve hit this age, we will now give or take anything, wear any mask, to fit, be part-of, not be Alone, we young. The U.S. arts are our guide to inclusion. A how-to. We are shown how to fashion masks of ennui and jaded irony at a young age where the face is fictile enough to assume the shape of whatever it wears. And then it’s stuck there, the weary cynicism that saves us from gooey sentiment and unsophisticated naivete. Sentiment equals naïveté on this continent...')
+puts "-- Media created with id: #{@media.id}"
+
+puts "=== End seeding media ==="
+
+###
 
 puts "\n== End seeding ==\n"
 
