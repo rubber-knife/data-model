@@ -23,7 +23,7 @@
 3. `$ @editor.meta.first.evaluation // 'unsure'`
 4. `$ @editor.meta.first.yes? // false`
 5. `$ @editor.meta.first.yes!`
-6. `$ @editor.meta.first.yes? // true`
+6. `$ @editor.meta.first.evaluation // 'yes'`
 
 #### Submissions
 1. `$ @submitter.submissions`
