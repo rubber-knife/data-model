@@ -15,6 +15,9 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 
+# Use Dragonfly for image management
+gem 'dragonfly', '~> 1.1.3'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
