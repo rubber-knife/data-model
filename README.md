@@ -27,9 +27,9 @@
 
 #### Submissions
 1. `$ @submitter.submissions`
-2. `$ @submitter.submissions.status // 'received'`
+2. `$ @submitter.submissions.first.status // 'received'`
 2. `$ @submitter.submissions.first.under_review? // false`
-2. `$ @submitter.submissions.first.under_review!`
+2. `$ @editor.submissions.first.under_review!`
 2. `$ @submitter.submissions.first.under_review? // true`
 
 #### Notes
