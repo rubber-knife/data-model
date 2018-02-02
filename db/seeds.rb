@@ -16,11 +16,11 @@ puts "== Begin seeding ==\n\n"
 
 puts "=== Begin seeding users ==="
 
-u = User.create(first_name: 'Dave', last_name: 'Wallace', email: 'howling@fantods.ij', password: 'pumulis_sucks')
-puts "-- User created with id: #{u.id}"
+@submitter = User.create(first_name: 'Dave', last_name: 'Wallace', email: 'howling@fantods.ij', password: 'pumulis_sucks')
+puts "-- User created with id: #{@submitter.id}"
 
-User.create(first_name: 'Donald', last_name: 'Geddes', email: 'dev@rubberknife.ca', password: 'password')
-puts "-- User created with id: #{u.id}"
+@editor = User.create(first_name: 'Donald', last_name: 'Geddes', email: 'dev@rubberknife.ca', password: 'password')
+puts "-- User created with id: #{@editor.id}"
 
 puts "=== End seeding users ==="
 
@@ -34,13 +34,30 @@ puts "\n"
 
 puts "=== Begin seeding submissions ==="
 
-s = Submission.create(title: 'Infinite Jest')
-puts "-- Submission created with id: #{s.id}"
+@ij = @submitter.submissions.create(title: 'Infinite Jest')
+puts "-- Submission created with id: #{@ij.id}"
 
 puts "=== End seeding submissions ==="
 
 ########## END ##########
 ########## SUBMISSIONS ##########
+
+puts "\n"
+
+########## SEED ##########
+########## META ##########
+
+puts "=== Begin seeding meta ==="
+
+@meta = Metum.create(user: @editor, submission: @ij, read: true, evaluation: 'unsure')
+puts "-- Meta created with id: #{@meta.id}"
+
+puts "=== End seeding meta ==="
+
+########## END ##########
+########## META ##########
+
+
 
 puts "\n== End seeding ==\n"
 

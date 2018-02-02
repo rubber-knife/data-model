@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180202030244) do
+ActiveRecord::Schema.define(version: 20180202034655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "meta", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "submission_id"
+    t.boolean "read"
+    t.integer "evaluation", default: 0
+    t.datetime "last_edited"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["submission_id"], name: "index_meta_on_submission_id"
+    t.index ["user_id"], name: "index_meta_on_user_id"
+  end
 
   create_table "submissions", force: :cascade do |t|
     t.string "title"
@@ -32,4 +44,6 @@ ActiveRecord::Schema.define(version: 20180202030244) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "meta", "submissions"
+  add_foreign_key "meta", "users"
 end
