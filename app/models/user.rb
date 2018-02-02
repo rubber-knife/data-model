@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :meta
   has_many :submissions, through: :meta
 
+  has_many :notes
+
   has_secure_password validations: false
 
   def authenticate!(password)

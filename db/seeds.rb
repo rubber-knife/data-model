@@ -48,6 +48,15 @@ puts "-- Media created with id: #{@media.id}"
 
 puts "=== End seeding media ==="
 
+puts "\n"
+
+puts "=== Begin seeding notes ==="
+
+@note = @ij.notes.create(user: @editor, body: 'Very tedious, I must say.')
+puts "-- notes created with id: #{@note.id}"
+
+puts "=== End seeding notes ==="
+
 ###
 
 puts "\n== End seeding ==\n"

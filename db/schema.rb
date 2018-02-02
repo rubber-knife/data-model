@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180202042351) do
+ActiveRecord::Schema.define(version: 20180202051353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,16 @@ ActiveRecord::Schema.define(version: 20180202042351) do
     t.index ["user_id"], name: "index_meta_on_user_id"
   end
 
+  create_table "notes", force: :cascade do |t|
+    t.bigint "submission_id"
+    t.bigint "user_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["submission_id"], name: "index_notes_on_submission_id"
+    t.index ["user_id"], name: "index_notes_on_user_id"
+  end
+
   create_table "submissions", force: :cascade do |t|
     t.string "title"
     t.integer "status", default: 0
@@ -69,4 +79,6 @@ ActiveRecord::Schema.define(version: 20180202042351) do
   add_foreign_key "media", "submissions"
   add_foreign_key "meta", "submissions"
   add_foreign_key "meta", "users"
+  add_foreign_key "notes", "submissions"
+  add_foreign_key "notes", "users"
 end

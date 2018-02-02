@@ -4,5 +4,7 @@ class Submission < ApplicationRecord
   has_many :meta
   has_many :users, through: :meta
 
+  has_many :notes
+
   has_many :media
 end
