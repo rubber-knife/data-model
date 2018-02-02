@@ -17,10 +17,6 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
 
-    # Assigning like this for purposes of testing Dragonfly
-    # with Postman (which can't nest a file within a param)
-    @image.upload = params[:upload]
-
     if @image.save
       render :show, status: :created, location: @image
     else
