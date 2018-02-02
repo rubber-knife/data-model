@@ -10,7 +10,7 @@ puts "=== Begin seeding users ==="
 @submitter = User.create(first_name: 'Dave', last_name: 'Wallace', email: 'howling@fantods.ij', password: 'pumulis_sucks')
 puts "-- User created with id: #{@submitter.id}"
 
-@editor = User.create(first_name: 'Donald', last_name: 'Geddes', email: 'dev@rubberknife.ca', password: 'password')
+@editor = User.create(first_name: 'Donald', last_name: 'Geddes', email: 'dev@rubberknife.ca', password: 'password', role: 'editor')
 puts "-- User created with id: #{@editor.id}"
 
 puts "=== End seeding users ==="
