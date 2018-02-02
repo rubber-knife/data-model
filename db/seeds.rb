@@ -6,13 +6,43 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+########## BEGIN ##########
+########## SEED ##########
+
+puts "== Begin seeding ==\n\n"
+
+########## SEED ##########
+########## USERS ##########
+
 puts "=== Begin seeding users ==="
 
-2.times do |i|
-  u = User.create(first_name: "first#{i+1}", last_name: "last#{i+1}", email: "#{i+1}@email.com", password: 'password', role: "#{i}".to_i)
-  puts "Created user with id: #{u.id}"
-end
+u = User.create(first_name: 'Dave', last_name: 'Wallace', email: 'howling@fantods.ij', password: 'pumulis_sucks')
+puts "-- User created with id: #{u.id}"
+
+User.create(first_name: 'Donald', last_name: 'Geddes', email: 'dev@rubberknife.ca', password: 'password')
+puts "-- User created with id: #{u.id}"
 
 puts "=== End seeding users ==="
 
-puts "\n\n"
+########## END ##########
+########## USERS ##########
+
+puts "\n"
+
+########## SEED ##########
+########## SUBMISSIONS ##########
+
+puts "=== Begin seeding submissions ==="
+
+s = Submission.create(title: 'Infinite Jest')
+puts "-- Submission created with id: #{s.id}"
+
+puts "=== End seeding submissions ==="
+
+########## END ##########
+########## SUBMISSIONS ##########
+
+puts "\n== End seeding ==\n"
+
+########## END ##########
+########## SEED ##########
